@@ -1,0 +1,57 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+
+rectangle "1 - INÍCIO" as N1
+rectangle "2 - valor < 0 ?" as N2
+rectangle "3 - retorna negativo" as N3
+rectangle "4 - valor == 0 ?" as N4
+rectangle "5 - retorna zero" as N5
+rectangle "6 - valor < 10 ?" as N6
+rectangle "7 - retorna digito_unico" as N7
+rectangle "8 - valor < 100 ?" as N8
+rectangle "9 - valor % 2 == 0 ?" as N9
+rectangle "10 - retorna dezenas_pares" as N10
+rectangle "11 - retorna dezenas_impares" as N11
+rectangle "14 - valor < 1000 ?" as N14
+rectangle "15 - valor % 2 == 0 ?" as N15
+rectangle "16 - valor % 5 == 0 ?" as N16
+rectangle "17 - retorna centenas_pares_multiplo_de_5" as N17
+rectangle "18 - retorna centenas_pares" as N18
+rectangle "19 - valor % 5 == 0 ?" as N19
+rectangle "20 - retorna centenas_impares_multiplo_de_5" as N20
+rectangle "21 - retorna centenas_impares" as N21
+rectangle "22 - retorna grande" as N22
+rectangle "FIM" as NF
+
+N1 --> N2
+N2 --> N3 : sim
+N2 --> N4 : não
+N3 --> NF
+N4 --> N5 : sim
+N4 --> N6 : não
+N5 --> NF
+N6 --> N7 : sim
+N6 --> N8 : não
+N7 --> NF
+N8 --> N9 : sim
+N8 --> N14 : não
+N9 --> N10 : sim
+N9 --> N11 : não
+N10 --> NF
+N11 --> NF
+N14 --> N15 : sim
+N14 --> N22 : não
+N15 --> N16 : sim
+N15 --> N19 : não
+N16 --> N17 : sim
+N16 --> N18 : não
+N17 --> NF
+N18 --> NF
+N19 --> N20 : sim
+N19 --> N21 : não
+N20 --> NF
+N21 --> NF
+N22 --> NF
+
+@enduml
